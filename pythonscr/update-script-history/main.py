@@ -4,39 +4,34 @@ import requests
 import matplotlib.pyplot as plt
 import pandas as pd
 import mplcyberpunk
-import time  # 导入 time 模块
+import time
 
-# 读取 JSON 文件
+# 从远程 URL 获取 JSON 数据
+url = 'https://github.com/ChinaGodMan/UserScripts/raw/main/docs/ScriptsPath.json'
 try:
-    with open('docs/ScriptsPath.json', 'r', encoding='utf-8') as file:
-        data = json.load(file)
-except FileNotFoundError:
-    print("错误：找不到 JSON 文件 'docs/ScriptsPath.json'")
+    response = requests.get(url)
+    response.raise_for_status()  # 如果请求失败，将引发 HTTPError
+    data = response.json()  # 解析 JSON 数据
+except requests.exceptions.RequestException as e:
+    print(f"错误：无法从 {url} 获取 JSON 数据: {e}")
     exit()
 except json.JSONDecodeError as e:
-    print(f"错误：解析 JSON 文件时出错: {e}")
+    print(f"错误：解析 JSON 数据时出错: {e}")
     exit()
 
 for script in data.get('scripts', []):
     # 获取 GreasyFork 的 ID 和备份路径
     greasyfork_id = script.get('GreasyFork')
-    backuppath = script.get('backuppath')
     
-
-    if not greasyfork_id or not backuppath:
+    if not greasyfork_id:
         print("错误：脚本数据不完整")
         continue
 
-    # 构造 URL
-    
-   # url = f'https://greasyfork.org/zh-CN/scripts/{greasyfork_id}/stats.json'
-    is_sleazy = script.get('isSleazy', False)
-
     # 根据 isSleazy 的值选择不同的 URL
+    is_sleazy = script.get('isSleazy', False)
     base_url = 'https://sleazyfork.org' if is_sleazy else 'https://greasyfork.org'
     url = f'{base_url}/zh-CN/scripts/{greasyfork_id}/stats.json'
 
-    
     # 获取数据
     response = requests.get(url)
     
@@ -69,8 +64,8 @@ for script in data.get('scripts', []):
     print("日期:", star_date)
     print("安装数:", star_installs)
     
-    # 确保文件夹存在
-    output_dir = os.path.join(backuppath, 'preview')
+    # 确保固定输出文件夹 "stats" 存在
+    output_dir = 'stats'
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
@@ -84,7 +79,10 @@ for script in data.get('scripts', []):
     plt.xticks(fontsize=20)
     plt.yticks(fontsize=20)
     plt.plot(pd.to_datetime(star_date), star_installs, linewidth=4.0)
-    plt.savefig(os.path.join(output_dir, 'statshistory.png'))
+    
+    # 使用 greasyfork_id 作为文件名保存图片
+    output_path = os.path.join(output_dir, f'{greasyfork_id}.png')
+    plt.savefig(output_path)
     plt.close()
     
     # 延时 3 秒钟
