@@ -6,24 +6,10 @@ import pandas as pd
 import mplcyberpunk
 import time
 
-
-# 从环境变量中获取 GitHub Token
-github_token = os.getenv('MY_GITHUB_TOKEN')
-
-# 构建 GitHub API 请求 URL
-owner = 'ChinaGodMan'  # 仓库拥有者的用户名
-repo = 'UserScripts'  # 仓库名
-path = 'docs/ScriptsPath.json'  # 文件路径
-url = f'https://api.github.com/repos/{owner}/{repo}/contents/{path}'
-
-# 设置请求头以使用 GitHub Token 进行身份验证
-headers = {
-    'Authorization': f'token {github_token}',
-    'Accept': 'application/vnd.github.v3.raw'  # 直接获取原始文件内容
-}
-
+# 从远程 URL 获取 JSON 数据
+url = 'https://github.com/ChinaGodMan/UserScripts/raw/main/docs/ScriptsPath.json'
 try:
-    response = requests.get(url, headers=headers)
+    response = requests.get(url)
     response.raise_for_status()  # 如果请求失败，将引发 HTTPError
     data = response.json()  # 解析 JSON 数据
 except requests.exceptions.RequestException as e:
@@ -32,10 +18,6 @@ except requests.exceptions.RequestException as e:
 except json.JSONDecodeError as e:
     print(f"错误：解析 JSON 数据时出错: {e}")
     exit()
-
-# 现在你可以使用 data 变量来访问 JSON 数据
-print(data)
-
 
 for script in data.get('scripts', []):
     # 获取 GreasyFork 的 ID 和备份路径
