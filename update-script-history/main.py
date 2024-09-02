@@ -31,12 +31,12 @@ for script in data.get('scripts', []):
     is_sleazy = script.get('isSleazy', False)
     base_url = 'https://sleazyfork.org' if is_sleazy else 'https://greasyfork.org'
     url = f'{base_url}/zh-CN/scripts/{greasyfork_id}/stats.json'
-
+    scriptname=script.get('name')
     # 获取数据
     response = requests.get(url)
     
     # 调试信息
-    print(f"请求 URL: {url}")
+    print(f"{scriptname}请求 URL: {url}")
     print(f"响应状态码: {response.status_code}")
     print(f"响应内容: {response.text[:500]}")  # 只打印前500个字符
     
