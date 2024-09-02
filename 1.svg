@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+  <style>
+    .link {
+      cursor: pointer;
+      fill: blue;
+      text-decoration: underline;
+    }
+    .link:hover {
+      fill: red;
+    }
+  </style>
+  
+  <!-- 第一行 -->
+  <a href="https://www.baidu.com" target="_blank">
+    <text x="10" y="30" class="link">名称1</text>
+  </a>
+  <a href="https://www.google.com" target="_blank">
+    <text x="150" y="30" class="link">说明1</text>
+  </a>
+
+  <!-- 第二行 -->
+  <a href="https://www.baidu.com" target="_blank">
+    <text x="10" y="70" class="link">名称2</text>
+  </a>
+  <a href="https://www.google.com" target="_blank">
+    <text x="150" y="70" class="link">说明2</text>
+  </a>
+
+  <!-- 第三行 -->
+  <a href="https://www.baidu.com" target="_blank">
+    <text x="10" y="110" class="link">名称3</text>
+  </a>
+  <a href="https://www.google.com" target="_blank">
+    <text x="150" y="110" class="link">说明3</text>
+  </a>
+
+  <!-- 第四行 -->
+  <a href="https://www.baidu.com" target="_blank">
+    <text x="10" y="150" class="link">名称4</text>
+  </a>
+  <a href="https://www.google.com" target="_blank">
+    <text x="150" y="150" class="link">说明4</text>
+  </a>
+</svg>
