@@ -1,0 +1,3 @@
+<svg width="200" height="50" xmlns="http://www.w3.org/2000/svg">
+  <image href="https://img.shields.io/badge/dynamic/json?color=0084ff&label=Total%20Daily%20Installs&query=$.totalDailyInstalls&url=https://github.com/ChinaGodMan/UserScriptsHistory/raw/main/total_installs.json" width="200" height="50"/>
+</svg>
