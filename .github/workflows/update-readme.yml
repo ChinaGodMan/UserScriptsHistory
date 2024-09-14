@@ -1,4 +1,4 @@
-name: Greasyf
+name: 下载主仓库自述文件
 
 on:
   schedule:
