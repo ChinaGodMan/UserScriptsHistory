@@ -17,11 +17,9 @@ jobs:
 
     - name: Download README.md from remote URL
       run: |
-        curl -L -o docs/readme.md https://github.com/ChinaGodMan/UserScripts/raw/main/docs/README.md
+        curl -L -o readme.md https://github.com/ChinaGodMan/UserScripts/raw/main/docs/README.md
 
-    - name: Check README.md content
-      run: |
-        cat docs/readme.md  # 检查文件是否包含内容，确保下载成功
+    
 
     - name: Commit and push if README.md changed
       run: |
