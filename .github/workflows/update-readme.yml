@@ -17,7 +17,7 @@ jobs:
 
     - name: Download README.md from remote URL
       run: |
-        curl -o -l docs/readme.md https://github.com/ChinaGodMan/UserScripts/raw/main/docs/README.md
+        curl -o -L docs/readme.md https://github.com/ChinaGodMan/UserScripts/raw/main/docs/README.md
 
     - name: Commit and push if README.md changed
       run: |
