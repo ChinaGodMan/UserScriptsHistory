@@ -1,4 +1,4 @@
-name: 下载主仓库说明
+name: Greasyf
 
 on:
   schedule:
@@ -17,7 +17,11 @@ jobs:
 
     - name: Download README.md from remote URL
       run: |
-        curl -o -L docs/readme.md https://github.com/ChinaGodMan/UserScripts/raw/main/docs/README.md
+        curl -L -o docs/readme.md https://github.com/ChinaGodMan/UserScripts/raw/main/docs/README.md
+
+    - name: Check README.md content
+      run: |
+        cat docs/readme.md  # 检查文件是否包含内容，确保下载成功
 
     - name: Commit and push if README.md changed
       run: |
