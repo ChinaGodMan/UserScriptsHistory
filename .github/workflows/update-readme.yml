@@ -2,7 +2,7 @@ name: Greasyf
 
 on:
   schedule:
-    - cron: '0 */2 * * *'  # 每两个小时更新一次
+    - cron: '0 4 * * *'  # 12点北京时间更新一次
   workflow_dispatch:  # 允许手动触发工作流
 
 jobs:
