@@ -282,6 +282,34 @@
     <tr>
             <td>
                 <img src="https://greasyfork.org/vite/assets/blacklogo96-CxYTSM_T.png" width="16" height="16">
+                <a href="https://greasyfork.org/zh-CN/scripts/508956" target="_blank">GitHub 自动确认设备授权</a><br>
+                <img src="https://github.githubassets.com/favicons/favicon.svg" width="16" height="16">
+                <a href="https://github.com/ChinaGodMan/UserScripts/blob/main/github-device-authorization.user.js" target="_blank">GitHub</a>
+                <a href="https://github.com/ChinaGodMan/UserScripts/tree/main/Script details/github-device-authorization" target="_blank">
+                    <mark>详细</mark>
+                </a>
+            </td>
+            <td>在GitHub授权页面自动输入授权码与自动确认。</td>
+            <td>
+                <a href="https://raw.githubusercontent.com/ChinaGodMan/UserScripts/main/github-device-authorization.user.js">
+                    <img src="https://img.shields.io/github/size/ChinaGodMan/UserScripts/github-device-authorization.user.js?style=social" alt="size">
+                    <br>安装
+                </a>
+            </td>
+            <td>
+                <a href="https://update.greasyfork.org/scripts/508956.user.js">
+                    <img src="https://img.shields.io/greasyfork/dt/508956?color=%23990000&label=Installs">
+                    <br>安装
+                </a>
+            </td>
+            <td><sub>2024-09-18 09:12:31</sub></td>
+            <td><sub>2024-09-18 09:16:03</sub></td>
+             <td><sub>1.0.0.0</sub></td>
+              <td><sub>2024-09-18 08:50:32</sub></td>
+        </tr>
+    <tr>
+            <td>
+                <img src="https://greasyfork.org/vite/assets/blacklogo96-CxYTSM_T.png" width="16" height="16">
                 <a href="https://greasyfork.org/zh-CN/scripts/505496" target="_blank">GitHub文件夹下载</a><br>
                 <img src="https://github.githubassets.com/favicons/favicon.svg" width="16" height="16">
                 <a href="https://github.com/ChinaGodMan/UserScripts/blob/main/github-folder-downloader.user.js" target="_blank">GitHub</a>
@@ -474,6 +502,34 @@
             <td><sub>2024-09-17 10:18:44</sub></td>
              <td><sub>0.9.3.66</sub></td>
               <td><sub>2024-07-27 20:54:00</sub></td>
+        </tr>
+    <tr>
+            <td>
+                <img src="https://greasyfork.org/vite/assets/blacklogo96-CxYTSM_T.png" width="16" height="16">
+                <a href="https://greasyfork.org/zh-CN/scripts/508968" target="_blank">GrreasyFork 用户发布的脚本数据可视化</a><br>
+                <img src="https://github.githubassets.com/favicons/favicon.svg" width="16" height="16">
+                <a href="https://github.com/ChinaGodMan/UserScripts/blob/main/greasyfork-user-scripts-data-visualization.user.js" target="_blank">GitHub</a>
+                <a href="https://github.com/ChinaGodMan/UserScripts/tree/main/Script details/greasyfork-user-scripts-data-visualization" target="_blank">
+                    <mark>详细</mark>
+                </a>
+            </td>
+            <td>使用Chart.js获取和可视化获取用户脚本数据，并在用户个人主页生成一个图表在下方显示详细安装情况</td>
+            <td>
+                <a href="https://raw.githubusercontent.com/ChinaGodMan/UserScripts/main/greasyfork-user-scripts-data-visualization.user.js">
+                    <img src="https://img.shields.io/github/size/ChinaGodMan/UserScripts/greasyfork-user-scripts-data-visualization.user.js?style=social" alt="size">
+                    <br>安装
+                </a>
+            </td>
+            <td>
+                <a href="https://update.greasyfork.org/scripts/508968.user.js">
+                    <img src="https://img.shields.io/greasyfork/dt/508968?color=%23990000&label=Installs">
+                    <br>安装
+                </a>
+            </td>
+            <td><sub>2024-09-18 11:41:12</sub></td>
+            <td><sub>2024-09-18 11:41:12</sub></td>
+             <td><sub>1.0.0.0</sub></td>
+              <td><sub>2024-09-19 11:22:00</sub></td>
         </tr>
     <tr>
             <td>
@@ -807,8 +863,8 @@
                 </a>
             </td>
             <td><sub>2024-09-03 08:50:59</sub></td>
-            <td><sub>2024-09-16 08:04:06</sub></td>
-             <td><sub>1.0.1.7</sub></td>
+            <td><sub>2024-09-17 10:18:52</sub></td>
+             <td><sub>1.0.1.8</sub></td>
               <td><sub>2024-09-03 08:52:46</sub></td>
         </tr>
     <tr>
@@ -1031,8 +1087,8 @@
                 </a>
             </td>
             <td><sub>2024-08-26 11:37:23</sub></td>
-            <td><sub>2024-09-16 08:04:06</sub></td>
-             <td><sub>0.31.0.22</sub></td>
+            <td><sub>2024-09-17 10:18:53</sub></td>
+             <td><sub>0.31.0.23</sub></td>
               <td><sub>2024-07-27 20:58:34</sub></td>
         </tr>
     </tbody>
