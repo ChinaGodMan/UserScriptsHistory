@@ -1,22 +1,26 @@
 import json
 import os
-import requests
+import subprocess
 import matplotlib.pyplot as plt
 import pandas as pd
 import mplcyberpunk
 import time
 
+# 使用 curl 下载 JSON 数据
+def download_json(url):
+    try:
+        result = subprocess.run(['curl', '-L', '-s', url], capture_output=True, text=True, check=True)
+        return json.loads(result.stdout)
+    except subprocess.CalledProcessError as e:
+        print(f"错误：无法从 {url} 获取 JSON 数据: {e}")
+        return None
+    except json.JSONDecodeError as e:
+        print(f"错误：解析 JSON 数据时出错: {e}")
+        return None
+
 # 从远程 URL 获取 JSON 数据
-url = 'https://github.com/ChinaGodMan/UserScripts/raw/main/docs/ScriptsPath.json'
-try:
-    response = requests.get(url)
-    response.raise_for_status()  # 如果请求失败，将引发 HTTPError
-    data = response.json()  # 解析 JSON 数据
-except requests.exceptions.RequestException as e:
-    print(f"错误：无法从 {url} 获取 JSON 数据: {e}")
-    exit()
-except json.JSONDecodeError as e:
-    print(f"错误：解析 JSON 数据时出错: {e}")
+data = download_json('https://github.com/ChinaGodMan/UserScripts/raw/main/docs/ScriptsPath.json')
+if data is None:
     exit()
 
 for script in data.get('scripts', []):
@@ -31,25 +35,18 @@ for script in data.get('scripts', []):
     is_sleazy = script.get('isSleazy', False)
     base_url = 'https://sleazyfork.org' if is_sleazy else 'https://greasyfork.org'
     url = f'{base_url}/zh-CN/scripts/{greasyfork_id}/stats.json'
-    scriptname=script.get('name')
+    scriptname = script.get('name')
+    
     # 获取数据
-    response = requests.get(url)
+    star_json = download_json(url)
     
     # 调试信息
     print(f"{scriptname}请求 URL: {url}")
-    print(f"响应状态码: {response.status_code}")
-    print(f"响应内容: {response.text[:500]}")  # 只打印前500个字符
     
     # 检查响应内容是否为有效的 JSON
-    if response.status_code != 200:
-        print(f"错误：请求失败，状态码 {response.status_code}")
+    if star_json is None:
+        print(f"错误：请求失败，无法获取数据")
         continue
-    
-    try:
-        star_json = json.loads(response.text)
-    except json.JSONDecodeError as e:
-        print(f"解析 JSON 时出错: {e}")
-        continue  # 如果解析出错，跳过这个脚本
     
     star_date = []
     star_installs = []
