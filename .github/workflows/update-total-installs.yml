@@ -16,9 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         name: 检出代码
-        with:
-          token: ${{ secrets.MY_GITHUB_TOKEN }}  # 使用你创建的 Token
-
+        
       - name: 获取当前分支
         id: get_branch
         run: |
@@ -92,10 +90,9 @@ jobs:
           # 配置 Git 用户
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          
+          git pull
           # 添加更改
           git add total_installs.json
           git commit -m '更新 Greasyfork 最新统计数据' || echo "没有需要提交的更改"
           git push origin ${{ env.branch }}
-        env:
-          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # 传递 Token 到 Git 环境变量中
+        
