@@ -12,8 +12,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.MY_GITHUB_TOKEN }}  # 使用你创建的 Token
+      
 
     - name: Download README.md from remote URL
       run: |
@@ -25,8 +24,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        git pull
         git add .
         git diff --quiet && git diff --staged --quiet || git commit -m "Update docs/readme.md from remote"
         git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # 传递 Token 到 Git 环境变量中
