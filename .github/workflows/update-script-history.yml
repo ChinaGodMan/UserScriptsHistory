@@ -12,8 +12,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-          token: ${{ secrets.MY_GITHUB_TOKEN }}  # 使用你创建的 Token
+
+    
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -50,9 +50,8 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        git pull
         git add .
         git diff --quiet && git diff --staged --quiet || git commit -m "Update image"
         git push origin ${{ env.branch }}
-      env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # 传递 Token 到 Git 环境变量中
-
+      
