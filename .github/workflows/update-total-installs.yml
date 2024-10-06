@@ -14,19 +14,9 @@ jobs:
   update-total-installs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         name: 检出代码
         
-      - name: 获取当前分支
-        id: get_branch
-        run: |
-          echo "当前分支: $(git rev-parse --abbrev-ref HEAD)"
-          echo "branch=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
-
-      - name: 拉取最新更改
-        run: |
-          git pull origin ${{ env.branch }}  # 拉取最新的远程更改
-
       - name: 获取和处理 JSON 数据
         run: |
           # 下载 JSON 文件
@@ -94,5 +84,5 @@ jobs:
           # 添加更改
           git add total_installs.json
           git commit -m '更新 Greasyfork 最新统计数据' || echo "没有需要提交的更改"
-          git push origin ${{ env.branch }}
+          git push
         
