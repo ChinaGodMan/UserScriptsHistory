@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main  # 或你希望检查的其他分支
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # 使用你需要的 Node.js 版本
+
+      - name: Install dependencies
+        run: npm install  # 根据你的项目使用合适的命令
+
+      - name: Run tests
+        run: npm test  # 根据你的项目使用合适的命令
