@@ -87,7 +87,7 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git pull
           # 添加更改
-          git add total_installs.json
+          git add .
           git commit -m '更新 Greasyfork 最新统计数据' || echo "没有需要提交的更改"
           git push
         
