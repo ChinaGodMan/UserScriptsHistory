@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 0
 
       - name: 运行 authors.sh
-        run: bash authors.sh
+        run: bash scr/authors.sh
       
       - name: 获取和处理 JSON 数据
         run: |
