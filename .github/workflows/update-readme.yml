@@ -1,0 +1,30 @@
+name: 下载主仓库自述文件
+
+on:
+  schedule:
+    - cron: '0 4 * * *'  # 12点北京时间更新一次
+  workflow_dispatch:  # 允许手动触发工作流
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+
+    - name: Download README.md from remote URL
+      run: |
+        curl -L -o readme.md https://github.com/ChinaGodMan/UserScripts/raw/main/docs/README.md
+
+    
+
+    - name: Commit and push if README.md changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git pull
+        git add .
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update docs/readme.md from remote"
+        git push

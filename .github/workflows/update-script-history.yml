@@ -1,0 +1,45 @@
+name: Greasyfork 更新脚本状态
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'  # 两个小时更新一次
+  workflow_dispatch:  # 允许手动触发工作流
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    
+    
+
+    - name: Install fonts
+      run: |
+        mkdir -p ~/.fonts
+        cp update-script-history/fonts/* ~/.fonts/
+        fc-cache -f -v
+
+    - name: Install dependencies
+      run: |
+        
+        pip install requests matplotlib pandas mplcyberpunk
+
+    
+    
+    - name: Run script
+      run: |
+        python update-script-history/main.py  # 替换为你的Python脚本文件名
+       # python pythonscr/添加脚本声明头信息/main.py  # 更新所有的文档信息
+
+    - name: Commit and push if it changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git pull
+        git add .
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update image"
+        git push
+      
