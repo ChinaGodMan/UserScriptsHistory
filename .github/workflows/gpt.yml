@@ -13,10 +13,10 @@ jobs:
     # if: ${{ contains(github.event.*.labels.*.name, 'gpt review') }} # Optional; to run only when a label is attached
     runs-on: ubuntu-latest
     steps:
-      - uses: ChinaGodMan/ChatGPT-CodeReview@main
+      - uses: anc95/ChatGPT-CodeReview@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: "sk-mbS3uTfHrjV14i7OC187F211E4584225B7B943Cf58240c36"
+          OPENAI_API_KEY: "sk-"
           # Optional
           LANGUAGE: Chinese
           OPENAI_API_ENDPOINT: https://api.openai.com/v1
