@@ -1,4 +1,4 @@
-name: Auto Assign PR to Repository Owner
+name: assign-pr-to-creator
 
 on:
   pull_request:
@@ -8,10 +8,10 @@ jobs:
   assign-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Assign PR to repository owner
+      - name: 自动分配审查和受理至人民的勤务员
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.BOT_TOKEN }} 
+          github-token: ${{ secrets.BOT_TOKEN }}
           script: |
             const prOwner = context.repo.owner;
             const pullRequest = context.payload.pull_request;
@@ -35,5 +35,13 @@ jobs:
                 reviewers: [prOwner] 
               });
             } else {
-              console.log(`跳过请求审阅，因为 PR 的作者是 ${prAuthor}`);
+              console.log(`跳过请求审阅，因为 PR 的作者是 ${prAuthor}，也是仓库拥有者，无需审查!`);
             }
+
+            // 在 PR 中留言
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pull_number,
+              body: "人民的勤务员将尽快合并此次请求！"
+            });
