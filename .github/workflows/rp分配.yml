@@ -11,7 +11,7 @@ jobs:
       - name: 自动分配审查和受理至人民的勤务员
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.BOT_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const prOwner = context.repo.owner;
             const pullRequest = context.payload.pull_request;
