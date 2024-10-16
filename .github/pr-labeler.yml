@@ -1,4 +1,4 @@
-# .github/pr-labeler.yml
+# .github/pr-labeler.yml2
 # The bot always updates the labels, add/remove as necessary [default: false]
 alwaysReplace: false
 # Treats the text and labels as case sensitive [default: true]
