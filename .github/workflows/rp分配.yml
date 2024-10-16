@@ -1,7 +1,7 @@
 name: Auto Assign PR to Repository Owner
 
 on:
-  pull_request:
+  pull_request:X
     types: [opened]
 
 jobs:
