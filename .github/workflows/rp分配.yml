@@ -14,9 +14,20 @@ jobs:
           github-token: ${{ secrets.BOT_TOKEN }}  
           script: |
             const prOwner = context.repo.owner;
+            const pull_number = context.payload.pull_request.number;
+
+            // 添加受理人（assignees），使用 issues API
+            await github.rest.issues.addAssignees({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pull_number,  // 使用 PR 的编号作为 issue 的编号
+              assignees: [prOwner]  // 将 PR 分配给仓库拥有者
+            });
+
+            // 请求审阅
             await github.rest.pulls.requestReviewers({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number,
-              reviewers: [prOwner]  
+              pull_number: pull_number,
+              reviewers: [prOwner]  // 将 PR 的审阅者设置为仓库拥有者
             });
