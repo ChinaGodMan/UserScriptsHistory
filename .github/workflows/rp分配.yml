@@ -15,6 +15,7 @@ jobs:
           script: |
             const prOwner = context.repo.owner;
             const pull_number = context.payload.pull_request.number;
+            const prAuthor = pullRequest.user.login;
 
             // 添加受理人（assignees），使用 issues API
             await github.rest.issues.addAssignees({
@@ -25,9 +26,13 @@ jobs:
             });
 
             // 请求审阅
+            if (prOwner !== prAuthor) {
             await github.rest.pulls.requestReviewers({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: pull_number,
               reviewers: [prOwner]  // 将 PR 的审阅者设置为仓库拥有者
             });
+             } else {
+              console.log(`跳过请求审阅，因为 PR 的作者是 ${prAuthor}`);
+            }
