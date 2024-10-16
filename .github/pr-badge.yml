@@ -1,15 +1,19 @@
-- label: "JIRA"
-  message: "$issuePrefix"
-  icon: "jira"
+- label: "Waiting for"
+  message: "QA"
+  color: yellow
+  when: "$payload.pull_request.body.includes('- [ ] QA')"
+
+- label: "预览"
+  message: "PR-$prNumber"
   color: "blue"
-  url: "https://jira.company.com/browse/$issuePrefix"
-  when: "$issuePrefix"
+  url: "https://pr-$prNumber.company.com"
+
+- label: "Passed"
+  message: "QA"
+  color: green
+  when: "$payload.pull_request.body.includes('- [x] QA')"
 
 
-
-- label: "Hello"
-  message: "World"
-  color: "green"
 
 - label: "PR Size"
   message: "Large"
@@ -21,10 +25,6 @@
   color: "yellow"
   when: "$additions > 200 && $additions < 500"
 
-- label: "Waiting for"
-  message: "QA"
-  color: yellow
-  when: "$payload.pull_request.body.includes('- [ ] QA')"
-
-- imageUrl: https://github.com/$owner/$repo/actions/workflows/ci.yml/badge.svg?branch=$branchName
-  url: https://github.com/$owner/$repo/actions/workflows/ci.yml?query=branch:$branchName
+- message: "Work in Progress"
+  color: "yellow"
+  when: "$payload.pull_request.title.includes('WIP')"
