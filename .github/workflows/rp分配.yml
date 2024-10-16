@@ -1,0 +1,13 @@
+name: assign-rp-to-creator
+
+on: [pull_request]
+
+jobs:
+    automation:
+        runs-on: ubuntu-latest
+        steps:
+            - name: 自动分配人民的勤务员
+              uses: thomaseizinger/assign-pr-creator-action@v1.0.0
+              if: github.event_name == 'pull_request' && github.event.action == 'opened'
+              with:
+                  repo-token: ${{ secrets.GITHUB_TOKEN }}
