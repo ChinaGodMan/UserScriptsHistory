@@ -11,7 +11,7 @@ jobs:
       - name: Assign PR to repository owner
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.BOT_TOKEN }}  
+          github-token: ${{ secrets.GITHUB_TOKEN }}  
           script: |
             const prOwner = context.repo.owner;
             await github.rest.pulls.requestReviewers({
