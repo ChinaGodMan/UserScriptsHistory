@@ -1,4 +1,4 @@
-name: Auto Assign PR to Repository Owner
+name: Auto Assign PR to Repository Owner2
 
 on:
   pull_request:
