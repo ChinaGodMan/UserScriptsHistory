@@ -1,4 +1,4 @@
-name: assign-rp-to-creator
+name: assign-rp-to-creatorX
 
 on: [pull_request]
 
