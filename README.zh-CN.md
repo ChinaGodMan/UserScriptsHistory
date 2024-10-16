@@ -1292,13 +1292,13 @@
 > [！提示!]
 >
 > -   [#12](https://github.com/ChinaGodMan/UserScripts/issues/12)：巨魔的脸：<a href="https://github.com/adamlui" title=""><img src="https://avatars.githubusercontent.com/u/10906554?v=4" width="42;" alt="Adam Lui 刘展鹏"/></a>:+1:
-> -   _本仓库的自动翻译与 Action 功能特别感谢美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)出色的想法与代码!_：巨魔的脸：
+> -   _本仓库的自动翻译与 Action 功能特别感谢美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)出色的想法与代码!_ :trollface:
 > -   _本仓库命名风格受美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)启发_：巨魔的脸：
 > -   _本仓库内自述文件来自[Adam Lui 刘展鹏](https://github.com/adamlui)的自述风格_：巨魔的脸：
 > -   _脚本内的相互导流跳转来自[Adam Lui 刘展鹏](https://github.com/adamlui)的自述风格_：巨魔的脸：
 > -   _本仓库内所有`README.md`文件复制并使用了这个美国佬的仓库`README.md`文件排版，分隔符，代码，思路_：巨魔的脸：
 > -   _复制了美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)Action 内代码_[同步-autoclear-chatgpt-history-changes.yml](https://github.com/adamlui/chatgpt-apps/blob/main/.github/workflows/sync-autoclear-chatgpt-history-changes.yml)：巨魔的脸：
-> -   _复制了 美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)Action 内代码_[同步-autoclear-chatgpt-history-changes.yml](https://github.com/adamlui/chatgpt-apps/blob/main/.github/workflows/sync-autoclear-chatgpt-history-changes.yml) :trollface:
+> -   _复制了 美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)Action 内代码_[同步-autoclear-chatgpt-history-changes.yml](https://github.com/adamlui/chatgpt-apps/blob/main/.github/workflows/sync-autoclear-chatgpt-history-changes.yml)：巨魔的脸：
 > -   _复制了美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)_[chatgpt-自动继续/docs/README.md](https://github.com/adamlui/ai-apps/blob/main/chatgpt-auto-continue/docs/README.md)分隔符，等排版风格 :trollface:
 > -   _复制了 美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)Python 内代码_[translate-en-messages.py](https://github.com/adamlui/python-utils/blob/main/translate-messages/translate-en-messages.py)：巨魔的脸：
 
@@ -1314,17 +1314,17 @@
 
 ## 🌐 浏览器与脚本管理器
 
-|                               推荐浏览器                              |                                                    安装管理器                                                   | 安装浏览器                                                                      |
-| :--------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------- |
-|   <center>Chrome 或 基于 Chromium 内核的浏览器[![][chrome]][chrome_link]  |      <center>![.png][TM][捣固猴][Tampermonkey]![.png][vm][暴力猴子][Violentmonkey]![.png][cat][脚本猫][cat_link]     | <center>[![][chrome]][chrome_link][![][edge]][edge_link][![][QQ]][QQ_link] |
-| <center>Safari 浏览器（macOS, iOS, iPadOS）[![][safari]][safari_link] |                              <center>![][Macaquer][猕猴][Macaque]或![][stayr][停留]                             | <center>[![][safari]][safari_link]                                         |
-|   <center>Firefox 或 基于 Gecko 内核的浏览器[![][firefox]][firefox_link]  | <center>![.png][TM][Tampermonkey][Tampermonkey]![.png][vm][暴力猴子][Violentmonkey]![.png][cat][脚本猫][cat_link] | <center>[![][firefox]][firefox_link]                                       |
-|             <center>Opera 浏览器[![][opera]][opera_link]            |      <center>![.png][TM][捣固猴][Tampermonkey]![.png][vm][暴力猴子][Violentmonkey]![.png][cat][脚本猫][cat_link]     | <center>[![][opera]][opera_link]                                           |
-|           <center>Via 浏览器（Android）[![][via]][via_link]           |                                               <center>浏览器内自带                                               | <center>[![][via]][via_link]                                               |
-|              <center>X 浏览器（Android）[![][x]][x_link]              |                                               <center>浏览器内自带                                               | <center>[![][x]][x_link]                                                   |
-|          <center>KIWI 浏览器（Android）[![][kiwi]][kiwi_link]         |      <center>![.png][TM][捣固猴][Tampermonkey]![.png][vm][暴力猴子][Violentmonkey]![.png][cat][脚本猫][cat_link]     | <center>[![][kiwi]][kiwi_link]                                             |
-|             <center>狐猴浏览器（Android）[![][le]][le_link]             |      <center>![.png][TM][捣固猴][Tampermonkey]![.png][vm][暴力猴子][Violentmonkey]![.png][cat][脚本猫][cat_link]     | <center>[![][le]][le_link]                                                 |
-|                                                                  |                                                                                                            |                                                                            |
+|                               推荐浏览器                              |                                               安装管理器                                               | 安装浏览器                                                                      |
+| :--------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------- |
+|   <center>Chrome 或 基于 Chromium 内核的浏览器[![][chrome]][chrome_link]  | <center>![.png][TM][捣固猴][Tampermonkey]![.png][vm][暴力猴子][Violentmonkey]![.png][cat][脚本猫][cat_link] | <center>[![][chrome]][chrome_link][![][edge]][edge_link][![][QQ]][QQ_link] |
+| <center>Safari 浏览器（macOS, iOS, iPadOS）[![][safari]][safari_link] |                         <center>![][Macaquer][猕猴][Macaque]或![][stayr][停留]                         | <center>[![][safari]][safari_link]                                         |
+|   <center>Firefox 或 基于 Gecko 内核的浏览器[![][firefox]][firefox_link]  | <center>![.png][TM][捣固猴][Tampermonkey]![.png][vm][暴力猴子][Violentmonkey]![.png][cat][脚本猫][cat_link] | <center>[![][firefox]][firefox_link]                                       |
+|             <center>Opera 浏览器[![][opera]][opera_link]            | <center>![.png][TM][捣固猴][Tampermonkey]![.png][vm][暴力猴子][Violentmonkey]![.png][cat][脚本猫][cat_link] | <center>[![][opera]][opera_link]                                           |
+|           <center>Via 浏览器（Android）[![][via]][via_link]           |                                           <center>浏览器内自带                                          | <center>[![][via]][via_link]                                               |
+|              <center>X 浏览器（Android）[![][x]][x_link]              |                                           <center>浏览器内自带                                          | <center>[![][x]][x_link]                                                   |
+|          <center>KIWI 浏览器（Android）[![][kiwi]][kiwi_link]         | <center>![.png][TM][捣固猴][Tampermonkey]![.png][vm][暴力猴子][Violentmonkey]![.png][cat][脚本猫][cat_link] | <center>[![][kiwi]][kiwi_link]                                             |
+|             <center>狐猴浏览器（Android）[![][le]][le_link]             | <center>![.png][TM][捣固猴][Tampermonkey]![.png][vm][暴力猴子][Violentmonkey]![.png][cat][脚本猫][cat_link] | <center>[![][le]][le_link]                                                 |
+|                                                                  |                                                                                                   |                                                                            |
 
 [Tampermonkey]: http://tampermonkey.net/ "篡改猴"
 
