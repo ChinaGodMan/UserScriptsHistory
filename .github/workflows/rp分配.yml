@@ -11,12 +11,23 @@ jobs:
       - name: Assign PR to repository owner
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.BOT_TOKEN }}  
+          github-token: ${{ secrets.GITHUB_TOKEN }} 
           script: |
             const prOwner = context.repo.owner;
+            const pull_number = context.payload.pull_request.number;
+            
+            // 添加受理人（assignees）
+            await github.rest.pulls.addAssignees({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pull_number,
+              assignees: [prOwner] 
+            });
+
+            // 请求审阅
             await github.rest.pulls.requestReviewers({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number,
-              reviewers: [prOwner]  
+              pull_number: pull_number,
+              reviewers: [prOwner] 
             });
