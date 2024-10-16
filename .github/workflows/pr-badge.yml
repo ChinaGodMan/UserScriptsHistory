@@ -1,0 +1,30 @@
+- label: "JIRA"
+  message: "$issuePrefix"
+  icon: "jira"
+  color: "blue"
+  url: "https://jira.company.com/browse/$issuePrefix"
+  when: "$issuePrefix"
+
+
+
+- label: "Hello"
+  message: "World"
+  color: "green"
+
+- label: "PR Size"
+  message: "Large"
+  color: "red"
+  when: "$additions >= 500"
+
+- label: "PR Size"
+  message: "Medium"
+  color: "yellow"
+  when: "$additions > 200 && $additions < 500"
+
+- label: "Waiting for"
+  message: "QA"
+  color: yellow
+  when: "$payload.pull_request.body.includes('- [ ] QA')"
+
+- imageUrl: https://github.com/$owner/$repo/actions/workflows/ci.yml/badge.svg?branch=$branchName
+  url: https://github.com/$owner/$repo/actions/workflows/ci.yml?query=branch:$branchName
