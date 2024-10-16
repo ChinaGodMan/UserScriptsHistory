@@ -1,4 +1,4 @@
-name: Auto Assign Issue to Repository Owner
+name: assign-issue-to-creator
 
 on:
   issues:
@@ -8,7 +8,7 @@ jobs:
   assign-issue:
     runs-on: ubuntu-latest
     steps:
-      - name: Assign issue to repository owner
+      - name: 自动分配人民的勤务员
         uses: actions/github-script@v6
         with:
           script: |
