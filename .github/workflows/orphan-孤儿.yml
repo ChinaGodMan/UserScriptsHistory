@@ -19,11 +19,11 @@ jobs:
         id: check_size
         run: |
           repo_size=$(du -sm . | cut -f1)  # 获取仓库大小（以MB为单位）
-          echo "Repository size: ${repo_size} MB"
-          echo "::set-output name=size::${repo_size}"  # 设置为输出变量
+          echo "仓库占用大小: ${repo_size} MB"
+          echo "REPO_SIZE=${repo_size}" >> $GITHUB_ENV
 
       - name: 创建孤儿分之并推送到仓库
-        if: steps.check_size.outputs.size > 800  # 当仓库大小大于10MB时执行
+        if:  env.REPO_SIZE > 800
         run: |
           git config --local user.email "chinagodman1@gmail.com"
           git config --local user.name "qinwuyuan-sync-bot"
