@@ -12,6 +12,6 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - uses: ChinaGodMan/add-reviewed-by-action@v1
+      - uses: ChinaGodMan/add-reviewed-by-action@main
         with:
           github-token: ${{ secrets.BOT_TOKEN }}
