@@ -2,7 +2,7 @@ name: 归零大法-清空仓库大小
 on:
   workflow_dispatch:  
   schedule:           
-    - cron: '0 12 * * 1'  
+    - cron: '0 0 25 * *'  
   
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
           echo "::set-output name=size::${repo_size}"  # 设置为输出变量
 
       - name: 创建孤儿分之并推送到仓库
-        if: steps.check_size.outputs.size > 10  # 当仓库大小大于10MB时执行
+        if: steps.check_size.outputs.size > 800  # 当仓库大小大于10MB时执行
         run: |
           git config --local user.email "chinagodman1@gmail.com"
           git config --local user.name "qinwuyuan-sync-bot"
