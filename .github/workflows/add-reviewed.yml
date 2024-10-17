@@ -13,3 +13,5 @@ jobs:
       pull-requests: write
     steps:
       - uses: ntessore/add-reviewed-by-action@v1
+        with:
+          github-token: ${{ secrets.BOT_TOKEN }}
