@@ -23,7 +23,7 @@ jobs:
     - name: Commit and push if README.md changed
       run: |
         git config --local user.email "chinagodman1@gmail.com"
-        git config --local user.name "qinwuyuan-sync-bot"
+        git config --local user.name "勤务员的勤务员"
         git pull
         git add .
         git diff --quiet && git diff --staged --quiet || git commit -m "Update [\`readme.md\`] from [\`ChinaGodMan/UserScripts\`]"
