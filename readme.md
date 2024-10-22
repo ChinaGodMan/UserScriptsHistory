@@ -39,8 +39,6 @@
 **脚本来自互联网广大网友，本人仅是做了些许改动.感谢网友**
 **如有侵权,联系必删**
 
-## [<mark style="background-color: yellow; color: green;">浏览脚本目录查看详细</mark>](/Script%20details)
-
 ## 脚本列表
 
 <!--AUTO_SCRIPTS_PLEASE_DONT_DELETE_IT-->
@@ -82,7 +80,7 @@
                 </a>
             </td>
             <td><sub>2024-08-26 11:42:17</sub></td>
-            <td><sub>2024-10-19 05:36:23</sub></td>
+            <td><sub>2024-10-20 10:48:34</sub></td>
             <td><sub>0.1.1.0</sub></td>
             <td><sub>2024-07-27 20:58:35</sub></td>
         </tr>
@@ -265,7 +263,7 @@
                 </a>
             </td>
             <td><sub>2024-09-06 06:08:08</sub></td>
-            <td><sub>2024-10-15 01:04:50</sub></td>
+            <td><sub>2024-10-20 09:01:50</sub></td>
             <td><sub>1.0.0.9</sub></td>
             <td><sub>2024-09-06 05:02:49</sub></td>
         </tr>
@@ -300,7 +298,7 @@
         <tr>
             <td>
                 <img src="https://greasyfork.org/vite/assets/blacklogo96-CxYTSM_T.png" width="16" height="16">
-                <a href="https://greasyfork.org/zh-CN/scripts/498905" target="_blank">高亮网页文本_迷你版</a><br>
+                <a href="https://greasyfork.org/zh-CN/scripts/498905" target="_blank">高亮网页文本-迷你版</a><br>
                 <img src="https://github.githubassets.com/favicons/favicon.svg" width="16" height="16">
                 <a href="https://github.com/ChinaGodMan/UserScripts/blob/main/highlight-keywords-mini/highlight-keywords-mini.user.js" target="_blank">GitHub</a>
                 <a href="https://github.com/ChinaGodMan/UserScripts/tree/main/highlight-keywords-mini#readme" target="_blank">
@@ -504,8 +502,8 @@
                 </a>
             </td>
             <td><sub>2024-09-12 11:56:17</sub></td>
-            <td><sub>2024-10-19 05:36:26</sub></td>
-            <td><sub>4.1.0.3</sub></td>
+            <td><sub>2024-10-20 18:57:48</sub></td>
+            <td><sub>4.1.0.4</sub></td>
             <td><sub>2024-9-12 10:39:51</sub></td>
         </tr>
         <tr>
@@ -912,7 +910,7 @@
                     <mark>Readme</mark>
                 </a>
             </td>
-            <td>使用谷歌搜索 GreasyFork 和 SleazyFork 上的脚本 </td>
+            <td>使用谷歌搜索 GreasyFork 和 SleazyFork 上的脚本</td>
             <td>
                 <a href="https://raw.githubusercontent.com/ChinaGodMan/UserScripts/main/greasyfork-search/greasyfork-search.user.js">
                     <img src="https://img.shields.io/github/size/ChinaGodMan/UserScripts/greasyfork-search/greasyfork-search.user.js?style=social" alt="size">
@@ -1248,7 +1246,6 @@
 
 ## 如何安装/使用脚本？
 
-
 要使用任何脚本，首先需要浏览器安装 **Tampermonkey 脚本管理器扩展（[Chrome](https://pan.lanpw.com/b073l8d1e)** / **[Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/)** / **[Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd?hl=zh-CN)）。**
 
 -   点击表格 **\[安装\]** 直接弹出脚本管理器安装界面。
@@ -1267,49 +1264,52 @@
 
 ## 特别感谢开源
 
- > [!TIP]
->  -   <a href="https://github.com/XIU2" title=""><img src="https://avatars.githubusercontent.com/u/54703944?v=4" width="42;" alt="XIU2"/></a> :+1:
->  - 本仓库自述文件复制了[XIU2/UserScript//README.md](https://github.com/XIU2/UserScript/#:~:text=%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85/%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%EF%BC%9F)内容 `浏览器与脚本管理器`
+> [!TIP]
+>
+> -   <a href="https://github.com/XIU2" title=""><img src="https://avatars.githubusercontent.com/u/54703944?v=4" width="42;" alt="XIU2"/></a> :+1:
+> -   本仓库自述文件复制了[XIU2/UserScript//README.md](https://github.com/XIU2/UserScript/#:~:text=%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85/%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%EF%BC%9F)内容 `浏览器与脚本管理器`
 
 > [!TIP]
->  -   <a href="https://github.com/hmjz100" title=""><img src="https://avatars.githubusercontent.com/u/98228280?v=4" width="42;" alt="Hmjz100"/></a> :+1:
->  - 仓库内所有`README.md`文件徽章复制了[Hmjz100](https://github.com/hmjz100)的仓库[Online-disk-direct-link-download-assistant](https://github.com/hmjz100/Online-disk-direct-link-download-assistant)内的[README.md](https://github.com/hmjz100/Online-disk-direct-link-download-assistant/blob/main/README.md)文件的徽章风格
+>
+> -   <a href="https://github.com/hmjz100" title=""><img src="https://avatars.githubusercontent.com/u/98228280?v=4" width="42;" alt="Hmjz100"/></a> :+1:
+> -   仓库内所有`README.md`文件徽章复制了[Hmjz100](https://github.com/hmjz100)的仓库[Online-disk-direct-link-download-assistant](https://github.com/hmjz100/Online-disk-direct-link-download-assistant)内的[README.md](https://github.com/hmjz100/Online-disk-direct-link-download-assistant/blob/main/README.md)文件的徽章风格
 
 > [!TIP]
->  -   <a href="https://github.com/BonjourFeng" title=""><img src="https://avatars.githubusercontent.com/u/33033091?v=4" width="42;" alt="FengFeng"/></a> :+1:
->  - 仓库内所有`README.md`文件头部简介与历史安装表格复制了[FengFeng](https://github.com/BonjourFeng)的仓库[Github-Search-Purification](https://github.com/BonjourFeng/Github-Search-Purification)内[README.md](https://github.com/BonjourFeng/Github-Search-Purification/blob/main/README.md)文件内容
->  - 本仓库的子仓库`UserScriptsHistory`自动更新安装历史表格图片代码也复制使用了[FengFeng](https://github.com/BonjourFeng)的仓库[Script-History](https://github.com/BonjourFeng/Script-History)内的代码[main.py](https://github.com/BonjourFeng/Script-History/blob/main/source/main.py)
+>
+> -   <a href="https://github.com/BonjourFeng" title=""><img src="https://avatars.githubusercontent.com/u/33033091?v=4" width="42;" alt="FengFeng"/></a> :+1:
+> -   仓库内所有`README.md`文件头部简介与历史安装表格复制了[FengFeng](https://github.com/BonjourFeng)的仓库[Github-Search-Purification](https://github.com/BonjourFeng/Github-Search-Purification)内[README.md](https://github.com/BonjourFeng/Github-Search-Purification/blob/main/README.md)文件内容
+> -   本仓库的子仓库`UserScriptsHistory`自动更新安装历史表格图片代码也复制使用了[FengFeng](https://github.com/BonjourFeng)的仓库[Script-History](https://github.com/BonjourFeng/Script-History)内的代码[main.py](https://github.com/BonjourFeng/Script-History/blob/main/source/main.py)
 
 > [!TIP]
->  -   <a href="https://github.com/maboloshi" title=""><img src="https://avatars.githubusercontent.com/u/7850715?v=4" width="42;" alt="沙漠之子"/></a> :+1:
->  - 复制了 [沙漠之子](https://github.com/maboloshi)的仓库[github-chinese](https://github.com/maboloshi/github-chinese)内的代码<br>
->  - 本仓库内`writer.py` `update-contributors.yml` 复制使用了[tributors_images.yml](https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml)里面的代码
->  - 本仓库自述文件复制了[github-chinese/README.md](https://github.com/maboloshi/github-chinese#:~:text=%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E8%84%9A%E6%9C%AC%E7%AE%A1%E7%90%86%E5%99%A8)内容 `如何安装/使用脚本？`
- 
+>
+> -   <a href="https://github.com/maboloshi" title=""><img src="https://avatars.githubusercontent.com/u/7850715?v=4" width="42;" alt="沙漠之子"/></a> :+1:
+> -   复制了 [沙漠之子](https://github.com/maboloshi)的仓库[github-chinese](https://github.com/maboloshi/github-chinese)内的代码<br>
+> -   本仓库内`writer.py` `update-contributors.yml` 复制使用了[tributors_images.yml](https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml)里面的代码
+> -   本仓库自述文件复制了[github-chinese/README.md](https://github.com/maboloshi/github-chinese#:~:text=%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E8%84%9A%E6%9C%AC%E7%AE%A1%E7%90%86%E5%99%A8)内容 `如何安装/使用脚本？`
+
 > [!TIP]
->  -  [#12](https://github.com/ChinaGodMan/UserScripts/issues/12) :trollface:  <a href="https://github.com/adamlui" title=""><img src="https://avatars.githubusercontent.com/u/10906554?v=4" width="42;" alt="Adam Lui 刘展鹏"/></a> :+1:
->  - *本仓库的自动翻译与 Action 功能特别感谢美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)出色的想法与代码!* :trollface:
->  - *本仓库命名风格受美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)启发* :trollface:
->  -  *本仓库内自述文件来自[Adam Lui 刘展鹏](https://github.com/adamlui)的自述风格* :trollface:
->  -  *脚本内的相互导流跳转来自[Adam Lui 刘展鹏](https://github.com/adamlui)的自述风格* :trollface:
->  -  *本仓库内所有`README.md`文件复制并使用了这个美国佬的仓库`README.md`文件排版，分隔符，代码，思路* :trollface:
->  -  *复制了美国佬[Adam Lui 刘展鹏](https://github.com/adamlui) Action 内代码* [sync-autoclear-chatgpt-history-changes.yml](https://github.com/adamlui/chatgpt-apps/blob/main/.github/workflows/sync-autoclear-chatgpt-history-changes.yml) :trollface:
->  -  *复制了 美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)Action 内代码* [sync-autoclear-chatgpt-history-changes.yml](https://github.com/adamlui/chatgpt-apps/blob/main/.github/workflows/sync-autoclear-chatgpt-history-changes.yml) :trollface:
->  -    *复制了美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)* [chatgpt-auto-continue/docs/README.md](https://github.com/adamlui/ai-apps/blob/main/chatgpt-auto-continue/docs/README.md)分隔符，等排版风格 :trollface:
->  -  *复制了 美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)Python 内代码* [translate-en-messages.py](https://github.com/adamlui/python-utils/blob/main/translate-messages/translate-en-messages.py) :trollface:
-
-
-
+>
+> -   [#12](https://github.com/ChinaGodMan/UserScripts/issues/12) :trollface: <a href="https://github.com/adamlui" title=""><img src="https://avatars.githubusercontent.com/u/10906554?v=4" width="42;" alt="Adam Lui 刘展鹏"/></a> :+1:
+> -   _本仓库的自动翻译与 Action 功能特别感谢美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)出色的想法与代码!_ :trollface:
+> -   _本仓库命名风格受美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)启发_ :trollface:
+> -   _本仓库内自述文件来自[Adam Lui 刘展鹏](https://github.com/adamlui)的自述风格_ :trollface:
+> -   _脚本内的相互导流跳转来自[Adam Lui 刘展鹏](https://github.com/adamlui)的自述风格_ :trollface:
+> -   _本仓库内所有`README.md`文件复制并使用了这个美国佬的仓库`README.md`文件排版，分隔符，代码，思路_ :trollface:
+> -   _复制了美国佬[Adam Lui 刘展鹏](https://github.com/adamlui) Action 内代码_ [sync-autoclear-chatgpt-history-changes.yml](https://github.com/adamlui/chatgpt-apps/blob/main/.github/workflows/sync-autoclear-chatgpt-history-changes.yml) :trollface:
+> -   _复制了 美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)Action 内代码_ [sync-autoclear-chatgpt-history-changes.yml](https://github.com/adamlui/chatgpt-apps/blob/main/.github/workflows/sync-autoclear-chatgpt-history-changes.yml) :trollface:
+> -   _复制了美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)_ [chatgpt-auto-continue/docs/README.md](https://github.com/adamlui/ai-apps/blob/main/chatgpt-auto-continue/docs/README.md)分隔符，等排版风格 :trollface:
+> -   _复制了 美国佬[Adam Lui 刘展鹏](https://github.com/adamlui)Python 内代码_ [translate-en-messages.py](https://github.com/adamlui/python-utils/blob/main/translate-messages/translate-en-messages.py) :trollface:
 
 ## 贡献者
 
 <!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->
+
 <a href="https://github.com/ChinaGodMan" title="人民的勤务员"><img src="https://avatars.githubusercontent.com/u/96548841?v=4" width="42;" alt="人民的勤务员"/></a>
 <a href="https://github.com/qinwuyuan-sync-bot" title="人民的勤务员的勤务员"><img src="https://avatars.githubusercontent.com/u/177234083?v=4" width="42;" alt="人民的勤务员的勤务员"/></a>
+
 <!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
 贡献列表由： [contributors](https://github.com/jaywcjlove/github-action-contributors). 自动生成 <a href="https://github.com/jaywcjlove" title="小弟调调"><img src="https://avatars.githubusercontent.com/u/1680273?v=4" width="36;" alt="小弟调调"/></a>
-
 
 ## 🌐 浏览器与脚本管理器
 
