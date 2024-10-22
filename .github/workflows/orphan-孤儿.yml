@@ -23,7 +23,7 @@ jobs:
           echo "REPO_SIZE=${repo_size}" >> $GITHUB_ENV
 
       - name: 创建孤儿分之并推送到仓库
-        if:  env.REPO_SIZE > 1
+        if:  env.REPO_SIZE > 800
         run: |
           git config --local user.email "chinagodman1@gmail.com"
           git config --local user.name "qinwuyuan-sync-bot"
