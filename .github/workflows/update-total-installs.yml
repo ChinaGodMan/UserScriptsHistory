@@ -10,10 +10,8 @@ jobs:
   update-total-installs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         name: 检出代码
-        with:
-          fetch-depth: 0
 
       - name: 获取和处理 JSON 数据
         run: |
