@@ -2,11 +2,9 @@ name: GreasyFork 更新脚本安装数据
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 每 60 分钟运行一次
+    - cron: "0 * * * *" # 每 60 分钟运行一次
 
-  workflow_dispatch:  # 允许手动触发工作流
-
-  
+  workflow_dispatch: # 允许手动触发工作流
 
 jobs:
   update-total-installs:
@@ -16,7 +14,7 @@ jobs:
         name: 检出代码
         with:
           fetch-depth: 0
-      
+
       - name: 获取和处理 JSON 数据
         run: |
           # 下载 JSON 文件
@@ -49,9 +47,34 @@ jobs:
               echo "未找到数据源"
               exit 1
           fi
+          format_total() {
+            local num=$1 ; first_digit="${num:0:1}" second_digit="${num:1:1}"
+            second_digit_rounded=$(( second_digit < 5 ? 0 : 5 ))
+            if (( num >= 1000000000 )) ; then # 1B+ w/ one decimal place
+              formatted_num="$(( num / 1000000000 ))"
+              remainder=$(( (num % 1000000000) / 100000000 ))
+              if (( remainder != 0 )) ; then formatted_num+=".$remainder" ; fi
+              formatted_num+="B+"
+            elif (( num >= 10000000 )) ; then # abbr 10,000,000+ to 999,000,000+
+              formatted_num=$(printf "%'.f+" $((( num / 1000000 ) * 1000000 )))
+            elif (( num >= 1000000 )) ; then # abbr 1,000,000+ to 9,500,000+
+              formatted_num="${first_digit},${second_digit}00,000+"
+            elif (( num >= 100000 )) ; then # abbr 100,000+ to 950,000+
+              formatted_num="${first_digit}${second_digit_rounded}0,000+"
+            elif (( num >= 10000 )) ; then # abbr 10,000+ to 90,000+
+              formatted_num="${first_digit}0,000+"
+            elif (( num >= 1000 )) ; then # abbr 1K to 9.9K
+              formatted_num="$(( num / 1000 ))"
+              remainder=$(( (num % 1000) / 100 ))
+              if (( remainder != 0 )) ; then formatted_num+=".$remainder" ; fi
+              formatted_num+="K"
+            else formatted_num="$num" ; fi # preserve <1K as is
+            echo "$formatted_num"
+          }
 
           # 检查是否有计算结果为空
           total_installs=${total_installs:-0}
+          #total_installs=$(format_total "$((total_installs))")
           num_scripts=${num_scripts:-0}
           total_good_ratings=${total_good_ratings:-0}
           total_ok_ratings=${total_ok_ratings:-0}
@@ -60,7 +83,7 @@ jobs:
 
           # 将数据写入 JSON 文件
           echo "{
-            \"totalInstalls\": $total_installs,
+            \"totalInstalls\": \"$total_installs\",
             \"numScripts\": $num_scripts,
             \"totalGoodRatings\": $total_good_ratings,
             \"totalOkRatings\": $total_ok_ratings,
@@ -85,4 +108,3 @@ jobs:
           git add .
           git commit -m '更新 [`人民的勤务员`] 脚本统计数据' || echo "没有需要提交的更改"
           git push
-        
