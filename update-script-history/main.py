@@ -65,7 +65,7 @@ for script in data.get('scripts', []):
     print("安装数:", star_installs)
     
     # 确保固定输出文件夹 "stats" 存在
-    output_dir = 'stats'
+    output_dir = 'stat2s'
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
