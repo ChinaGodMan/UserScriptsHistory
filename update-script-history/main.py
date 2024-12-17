@@ -66,8 +66,7 @@ for script in data.get('scripts', []):
     
     # 确保固定输出文件夹 "stats" 存在
     output_dir = 'stats'
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    if not os.path.exists(output_dir):os.makedirs(output_dir)
     
     # 绘制图像
     plt.style.use("cyberpunk")
