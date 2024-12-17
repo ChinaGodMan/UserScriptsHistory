@@ -1,5 +1,5 @@
 import json
-import os
+import oss
 import requests
 import matplotlib.pyplot as plt
 import pandas as pd
