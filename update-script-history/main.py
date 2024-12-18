@@ -6,7 +6,7 @@ import pandas as pd
 import mplcyberpunk
 import time
 
-# 从远程 URL 获取 JSON 数据
+# a从远程 URL 获取 JSON 数据
 url = 'https://github.com/ChinaGodMan/UserScripts/raw/main/docs/ScriptsPath.json'
 try:
     response = requests.get(url)
