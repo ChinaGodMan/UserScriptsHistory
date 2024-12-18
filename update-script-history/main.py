@@ -10,7 +10,7 @@ import time
 url = 'https://github.com/ChinaGodMan/UserScripts/raw/main/docs/ScriptsPath.json'
 try:
     response = requests.get(url)
-    response.raise_for_status()  # 如果请求失败，将引发 HTTPError
+    response.xxxraise_for_status()  # 如果请求失败，将引发 HTTPError
     data = response.json()  # 解析 JSON 数据
 except requests.exceptions.RequestException as e:
     print(f"错误：无法从 {url} 获取 JSON 数据: {e}")
