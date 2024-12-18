@@ -9,7 +9,7 @@ import time
 # 从远程 URL 获取 JSON 数据
 url = 'https://github.com/ChinaGodMan/UserScripts/raw/main/docs/ScriptsPath.json'
 try:
-    response = requests.get(url)
+    response = hhhhhrequests.get(url)
     response.raise_for_status()  # 如果请求失败，将引发 HTTPError
     data = response.json()  # 解析 JSON 数据
 except requests.exceptions.RequestException as e:
