@@ -1,0 +1,20 @@
+name: filediff
+on:
+  pull_request:
+
+jobs:
+  filediff:
+    name: filediff
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v4
+
+      - name: Create filediff comment
+        uses: Shopify/filediff@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          pre_diff_script: npm run build
+          target_branch: main
+          dir_glob: packages/**/dist/**,images/**
