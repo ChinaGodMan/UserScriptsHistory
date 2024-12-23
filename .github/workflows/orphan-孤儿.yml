@@ -1,0 +1,38 @@
+name: 归零大法-清空仓库大小
+on:
+  workflow_dispatch:  
+  schedule:           
+    - cron: '0 0 25 * *'  
+  
+
+jobs:
+  check-size-and-reset:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 检查仓库大小
+        id: check_size
+        run: |
+          repo_size=$(du -sm . | cut -f1)  # 获取仓库大小（以MB为单位）
+          echo "仓库占用大小: ${repo_size} MB"
+          echo "REPO_SIZE=${repo_size}" >> $GITHUB_ENV
+ 
+      - name: Config committer
+        run: |
+          gpg --batch --import <(echo "${{ secrets.GPG_PRIVATE_KEY }}")
+          git config --global commit.gpgsign true
+          git config --global user.name "qinwuyuan-sync-bot"
+          git config --global user.email "chinagodman1@gmail.com"
+          git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
+
+      - name: 创建孤儿分之并推送到仓库
+        if: ${{ github.event_name == 'workflow_dispatch' || env.REPO_SIZE > 800 }}
+        run: |
+          git checkout --orphan temp-branch  # 创建孤儿分支
+          git commit --allow-empty -m ":trollface: 仓库过大，自动归零"
+          git push origin temp-branch:main --force
