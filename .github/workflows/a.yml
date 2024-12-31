@@ -13,15 +13,13 @@ jobs:
         runs-on: ubuntu-latest
         if: ${{ github.actor == 'qinwuyuan-sync-bot' }}
         steps:
-          
+            
             - name: install GH CLI
               uses: sersoft-gmbh/setup-gh-cli-action@2d02c06e284b7d55e954d6d6406e7a886f45a818
               with:
                   version: stable
             - name: Enable auto-merge for Dependabot PRs
-              run: |
-               
-               gh pr merge --auto --rebase --gpg-sign "$PR_URL"
+              run: gh pr merge --auto --rebase "$PR_URL"
               env:
                   PR_URL: ${{github.event.pull_request.html_url}}
                   GITHUB_TOKEN: ${{secrets.QWY_SYNC_BOT_TOKEN}}
