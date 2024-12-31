@@ -4,23 +4,31 @@ on:
         types: [opened, reopened]
     workflow_call:
 
-permissions:
-    contents: write
-    pull-requests: write
-
 jobs:
     dependabot:
+        if: ${{ github.actor == 'ChinaGodMan' }}
         runs-on: ubuntu-latest
-        if: ${{ github.actor == 'qinwuyuan-sync-bot' }}
+        env:
+          GIT_AUTHOR_NAME: ${{ github.event.commits[0].author.name }}
+          GIT_AUTHOR_EMAIL: ${{ github.event.commits[0].author.email }}
+          GIT_COMMITTER_NAME: qinwuyuan-sync-bot
+          GIT_COMMITTER_EMAIL: chinagodman1@gmail.com
+        
         steps:
-            - name: install GH CLI
-              uses: sersoft-gmbh/setup-gh-cli-action@2d02c06e284b7d55e954d6d6406e7a886f45a818
-              with:
-                  version: stable
-            - name: Enable auto-merge for Dependabot PRs
+            - name: 检出代码
+              uses: actions/checkout@v4
+            
+            - name: 配置 GPG 签名
               run: |
                 gpg --batch --import <(echo "${{ secrets.GPG_PRIVATE_KEY }}")
-                gh pr merge --auto --rebase --signed "$PR_URL"
-              env:
-                  PR_URL: ${{github.event.pull_request.html_url}}
-                  GITHUB_TOKEN: ${{secrets.QWY_SYNC_BOT_TOKEN}}
+                git config --global commit.gpgsign true
+                git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
+            
+            - name: 获取分支名称
+              id: get_branch_name
+              run: echo "branch_name=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
+            
+            - name: 签名合并并推送
+              run: |
+                git merge ${{ env.branch_name }}
+                git push origin main
