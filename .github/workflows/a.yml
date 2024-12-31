@@ -1,25 +1,32 @@
-name: Dependabot auto-merge
+name: Merge contributions PR
 on:
-    pull_request:
-        types: [opened, reopened]
-    workflow_call:
-
-permissions:
-    contents: write
-    pull-requests: write
+  pull_request_target:
+    types:
+      - opened
+      - reopened
 
 jobs:
-    dependabot:
-        runs-on: ubuntu-latest
-        if: ${{ github.actor == 'qinwuyuan-sync-bot' }}
-        steps:
-            
-            - name: install GH CLI
-              uses: sersoft-gmbh/setup-gh-cli-action@2d02c06e284b7d55e954d6d6406e7a886f45a818
-              with:
-                  version: stable
-            - name: Enable auto-merge for Dependabot PRs
-              run: gh pr merge --auto --rebase "$PR_URL"
-              env:
-                  PR_URL: ${{github.event.pull_request.html_url}}
-                  GITHUB_TOKEN: ${{secrets.QWY_SYNC_BOT_TOKEN}}
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code 👋
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Check and merge ⛙
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea
+        with:
+          github-token: ${{ secrets.QWY_SYNC_BOT_TOKEN }}
+          script: |
+            const { repo: { owner, repo } } = context;
+            const pr = context.payload.pull_request;
+
+            if (pr.user.id !== 46447321) {
+              console.log('Not an all-contributors pull request');
+             // return;
+            }
+
+            console.log(`Merging pull request: ${pr.html_url}`);
+            await github.rest.pulls.merge({
+              owner, repo,
+              pull_number: pr.number,
+              merge_method: "rebase",
+            });
