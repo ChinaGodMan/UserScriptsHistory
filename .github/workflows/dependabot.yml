@@ -30,5 +30,6 @@ jobs:
             
             - name: 签名合并并推送
               run: |
+                git checkoutmain
                 git merge ${{ env.branch_name }}
                 git push origin main
