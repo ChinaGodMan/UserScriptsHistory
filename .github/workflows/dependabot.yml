@@ -13,11 +13,6 @@ jobs:
         runs-on: ubuntu-latest
         if: ${{ github.actor == 'qinwuyuan-sync-bot' }}
         steps:
-            - name: Dependabot metadata
-              id: metadata
-              uses: dependabot/fetch-metadata@dbb049abf0d677abbd7f7eee0375145b417fdd34
-              with:
-                  github-token: "${{ secrets.QWY_SYNC_BOT_TOKEN }}"
             - name: install GH CLI
               uses: sersoft-gmbh/setup-gh-cli-action@2d02c06e284b7d55e954d6d6406e7a886f45a818
               with:
@@ -28,4 +23,4 @@ jobs:
                 gh pr merge --auto --rebase --signed "$PR_URL"
               env:
                   PR_URL: ${{github.event.pull_request.html_url}}
-                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+                  GITHUB_TOKEN: ${{secrets.QWY_SYNC_BOT_TOKEN}}
