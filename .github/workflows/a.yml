@@ -19,7 +19,7 @@ jobs:
             const { repo: { owner, repo } } = context;
             const pr = context.payload.pull_request;
 
-            if (pr.user.id !== 'ChinaGodMan') {
+            if (pr.user.login !== 'ChinaGodMan') {
               console.log('Not an all-contributors pull request');
               return;
             }
