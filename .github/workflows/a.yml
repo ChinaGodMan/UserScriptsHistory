@@ -30,3 +30,8 @@ jobs:
               pull_number: pr.number,
               merge_method: "squash",
             });
+            await github.rest.git.deleteRef({
+                owner,
+                repo,
+                ref: `heads/${pr.head.ref}`, 
+              });
