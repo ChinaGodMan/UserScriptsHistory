@@ -1,4 +1,4 @@
-name: Merge contributions PR
+name: Merge contributions PR1
 on:
   pull_request_target:
     types:
