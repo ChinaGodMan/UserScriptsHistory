@@ -17,6 +17,8 @@ jobs:
         steps:
             - name: 检出代码
               uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
             
             - name: 配置 GPG 签名
               run: |
@@ -30,6 +32,6 @@ jobs:
             
             - name: 签名合并并推送
               run: |
-                git checkoutmain
+                git checkout main
                 git merge ${{ env.branch_name }}
                 git push origin main
