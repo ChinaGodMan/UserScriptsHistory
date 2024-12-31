@@ -1,0 +1,4 @@
+*.ps1
+.vscode
+.eslintcache
+.messages

@@ -1,0 +1,32 @@
+name: Merge contributions PR
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code 👋
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Check and merge ⛙
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea
+        with:
+          github-token: ${{ secrets.QWY_SYNC_BOT_TOKEN }}
+          script: |
+            const { repo: { owner, repo } } = context;
+            const pr = context.payload.pull_request;
+
+            if (pr.user.id !== 96548841) {
+              console.log('Not an all-contributors pull request');
+              return;
+            }
+
+            console.log(`Merging pull request: ${pr.html_url}`);
+            await github.rest.pulls.merge({
+              owner, repo,
+              pull_number: pr.number,
+              merge_method: "rebase",
+            });
