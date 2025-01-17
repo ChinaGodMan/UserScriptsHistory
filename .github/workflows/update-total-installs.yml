@@ -16,7 +16,7 @@ jobs:
       - name: 获取和处理 JSON 数据
         run: |
           # 下载 JSON 文件
-          curl -s https://greasyfork.org/zh-CN/users/1169082-%E4%BA%BA%E6%B0%91%E7%9A%84%E5%8B%A4%E5%8A%A1%E5%91%98.json -o data.json
+          curl -s https://api.greasyfork.org/zh-CN/users/1169082-%E4%BA%BA%E6%B0%91%E7%9A%84%E5%8B%A4%E5%8A%A1%E5%91%98.json -o data.json
 
           # 打印下载的 JSON 文件内容进行调试
           echo "下载的 JSON 文件内容:"
