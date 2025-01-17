@@ -29,7 +29,7 @@ for script in data.get('scripts', []):
 
     # 根据 isSleazy 的值选择不同的 URL
     is_sleazy = script.get('isSleazy', False)
-    base_url = 'https://sleazyfork.org' if is_sleazy else 'https://greasyfork.org'
+    base_url = 'https://api.sleazyfork.org' if is_sleazy else 'https://api.greasyfork.org'
     url = f'{base_url}/zh-CN/scripts/{greasyfork_id}/stats.json'
     scriptname=script.get('name')
     # 获取数据
