@@ -1,0 +1,50 @@
+name: Greasyfork 更新脚本曲线图
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'  # 两个小时更新一次
+  workflow_dispatch:  
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    
+    
+
+    - name: Install fonts
+      run: |
+        mkdir -p ~/.fonts
+        cp update-script-history/fonts/* ~/.fonts/
+        fc-cache -f -v
+
+    - name: Install dependencies
+      run: |
+        
+        pip install requests matplotlib pandas mplcyberpunk
+
+    
+    
+    - name: Run script
+      run: |
+        python update-script-history/main.py  # 替换为你的Python脚本文件名
+       
+    - name: Config committer
+      run: |
+          gpg --batch --import <(echo "${{ secrets.GPG_PRIVATE_KEY }}")
+          git config --global commit.gpgsign true
+          git config --global user.name "qinwuyuan-sync-bot"
+          git config --global user.email "chinagodman1@gmail.com"
+          git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
+
+    - name: Commit and push if it changed
+      run: |
+        git pull
+        git add .
+        git diff --quiet && git diff --staged --quiet || git commit -m "更新脚本安装历史曲线图"        
+        git push
+      

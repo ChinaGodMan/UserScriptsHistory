@@ -1,0 +1,35 @@
+name: 下载主仓库自述文件
+
+on:
+  schedule:
+    - cron: '0 4 * * *'  # 12点北京时间更新一次
+  workflow_dispatch:  # 允许手动触发工作流
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+
+    - name: Download README.md from remote URL
+      run: |
+        curl -L -o readme.md https://github.com/ChinaGodMan/UserScripts/raw/main/docs/README.md
+
+    - name: Config committer
+      run: |
+          gpg --batch --import <(echo "${{ secrets.GPG_PRIVATE_KEY }}")
+          git config --global commit.gpgsign true
+          git config --global user.name "qinwuyuan-sync-bot"
+          git config --global user.email "chinagodman1@gmail.com"
+          git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
+
+
+    - name: Commit and push if README.md changed
+      run: |
+        git pull
+        git add .
+        git diff --quiet && git diff --staged --quiet || git commit -m 'Update [`readme.md`] from [`ChinaGodMan/UserScripts`]'
+        git push
