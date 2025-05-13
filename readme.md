@@ -59,7 +59,7 @@
     <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png?latest">
 </div></center>
 
-
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/ChinaGodMan/UserScripts)
 
 
 ## 脚本列表
@@ -67,7 +67,7 @@
 💡 **Tip:** _要显示预览截图，请点击扩展名称下方的 ▸ 或描述。_
 
 <!--SCRIPTS_COUNT-->
-**本储存库中当前发布了57个脚本,脚本包括:**
+**储存库当前发布脚本数量:57,脚本包括:**
 <h6><a href="#ChatGPT相关脚本-5">ChatGPT相关脚本 (5)</a>
  | <a href="#网页相关脚本-10">网页相关脚本 (10)</a>
  | <a href="#GitHub相关脚本-13">GitHub相关脚本 (13)</a>
