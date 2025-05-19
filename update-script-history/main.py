@@ -4,7 +4,6 @@ import requests
 import matplotlib.pyplot as plt
 import pandas as pd
 import mplcyberpunk
-import time
 from datetime import datetime
 
 
@@ -108,11 +107,7 @@ def main():
         script_update_checks[greasyfork_id] = daily_update_checks
         if not star_json:
             continue
-
-        # 绘制图像
-        plot_script_stats(script_name, greasyfork_id, star_json)
-
-        # 延时 3 秒钟,防止过多请求被 greasyfork 限制
+        plot_script_stats(script_name, greasyfork_id, star_json)     
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(script_update_checks, f, ensure_ascii=False, indent=4)
 
