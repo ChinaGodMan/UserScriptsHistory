@@ -105,6 +105,9 @@ def main():
             
         daily_update_checks = star_json[last_day]["update_checks"]
         script_update_checks[greasyfork_id] = daily_update_checks
+        if "total" not in script_update_checks:
+            script_update_checks["total"] = 0
+        script_update_checks["total"] +=daily_update_checks
         if not star_json:
             continue
         plot_script_stats(script_name, greasyfork_id, star_json)     
