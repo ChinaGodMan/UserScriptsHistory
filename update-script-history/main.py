@@ -112,6 +112,7 @@ def main():
         if not star_json:
             continue
         plot_script_stats(script_name, greasyfork_id, star_json)     
+    script_update_checks = dict(sorted(script_update_checks.items(), key=lambda item: item[1], reverse=True))
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(script_update_checks, f, ensure_ascii=False, indent=4)
 
