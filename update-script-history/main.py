@@ -84,6 +84,7 @@ def main():
         print("错误：无法获取脚本列表")
         return
     script_update_checks = {}
+    script_update_checks["total"] = 0
     output_file = "daily_update_checks.json"
     current_date = datetime.now().strftime("%Y-%m-%d")
     for script in data.get('scripts', []):
@@ -106,8 +107,6 @@ def main():
             
         daily_update_checks = star_json[last_day]["update_checks"]
         script_update_checks[greasyfork_id] = daily_update_checks
-        if "total" not in script_update_checks:
-            script_update_checks["total"] = 0
         script_update_checks["total"] +=daily_update_checks
         if not star_json:
             continue
