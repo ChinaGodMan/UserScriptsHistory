@@ -98,9 +98,10 @@ def main():
         # 获取脚本统计数据
         star_json = fetch_script_stats(greasyfork_id, is_sleazy)
         last_day = list(star_json.keys())[-1]
+
+        # 最后日期不允许等于当天，🤓当天数据还要实时统计，不如始终获取前一天数据（新发布的除外，因为他只有当天的数据）
         
-        if last_day == current_date :
-            # 🤓始终获取前一天数据，当天的数据不完整
+        if last_day == current_date and len(list(star_json.keys())) > 2:
             last_day = list(star_json.keys())[-2]
             
         daily_update_checks = star_json[last_day]["update_checks"]
