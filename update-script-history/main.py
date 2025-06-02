@@ -94,7 +94,7 @@ def main():
             continue
 
         script_name = script.get('name', 'Unknown Script')
-        is_sleazy = script.get('isSleazy', False)
+        is_sleazy = script.get('adult', False)
 
         # 获取脚本统计数据
         star_json = fetch_script_stats(greasyfork_id, is_sleazy)
