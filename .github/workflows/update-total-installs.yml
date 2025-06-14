@@ -80,8 +80,8 @@ jobs:
             \"totalInstalls\": \"$total_installs\",
             \"numScripts\": $num_scripts,
             \"totalGoodRatings\": $total_good_ratings,
-            \"totalOkRatings\": $total_ok_ratings,
-            \"totalBadRatings\": $total_bad_ratings,
+            \"totalOkRatings\": 0,
+            \"totalBadRatings\": 0,
             \"totalDailyInstalls\": $total_daily_installs
           }" > total_installs.json
 
