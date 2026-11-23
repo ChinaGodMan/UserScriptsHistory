@@ -5,11 +5,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import mplcyberpunk
 from datetime import datetime
+import cloudscraper
 
+scraper = cloudscraper.create_scraper()
 
 def fetch_json_data(url):
     try:
-        response = requests.get(url)
+        response = scraper.get(url)
         response.raise_for_status()  # 如果请求失败，将引发 HTTPError
         return response.json()
     except requests.exceptions.RequestException as e:
