@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        
+      - name: 设置 Python
+        uses: actions/setup-python@v7.1.0
+        with:
+          python-version: "3.12.4"
 
       - name: Install fonts
         run: |
